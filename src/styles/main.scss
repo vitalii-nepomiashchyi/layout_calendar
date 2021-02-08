@@ -11,16 +11,16 @@ body {
 }
 
 $cell-size: 100px;
-$margin-right-size: 1px;
+$cell-margin: 1px;
 $number-of-days: 28, 29, 30, 31;
 $first-day-of-month:
   "mon" 0,
-  "tue" $cell-size + $margin-right-size,
-  "wed" ($cell-size + $margin-right-size) * 2,
-  "thu" ($cell-size + $margin-right-size) * 3,
-  "fri" ($cell-size + $margin-right-size) * 4,
-  "sat" ($cell-size + $margin-right-size) * 5,
-  "sun" ($cell-size + $margin-right-size) * 6;
+  "tue" $cell-size + $cell-margin,
+  "wed" ($cell-size + $cell-margin) * 2,
+  "thu" ($cell-size + $cell-margin) * 3,
+  "fri" ($cell-size + $cell-margin) * 4,
+  "sat" ($cell-size + $cell-margin) * 5,
+  "sun" ($cell-size + $cell-margin) * 6;
 
 @for $i from 1 through 31 {
   .calendar > div:nth-child(#{$i})::after {
@@ -46,8 +46,8 @@ $first-day-of-month:
   flex-direction: row;
   flex-wrap: wrap;
   margin: auto;
-  min-width: ($cell-size + $margin-right-size) * 7;
-  max-width: ($cell-size + $margin-right-size) * 7;
+  min-width: ($cell-size + $cell-margin) * 7;
+  max-width: ($cell-size + $cell-margin) * 7;
 }
 
 .calendar > div {
@@ -55,7 +55,7 @@ $first-day-of-month:
   justify-content: center;
   align-items: center;
   flex: 0 1 $cell-size;
-  margin-right: $margin-right-size;
+  margin: $cell-margin / 2;
   height: $cell-size;
   font-size: 30px;
   background-color: #eee;
