@@ -55,7 +55,7 @@ $first-day-of-month:
   justify-content: center;
   align-items: center;
   flex: 0 1 $cell-size;
-  margin: $cell-margin / 2;
+  margin: $cell-margin $cell-margin 0 0;
   height: $cell-size;
   font-size: 30px;
   background-color: #eee;
