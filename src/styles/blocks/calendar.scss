@@ -34,13 +34,11 @@
     font-size: 30px;
     background-color: #eee;
     border: 1px solid #000;
+    transition: transform 0.5s, background-color 0.5s;
 
     &:hover {
-      position: relative;
-      cursor: pointer;
-      animation: hover;
-      animation-duration: 0.5s;
-      animation-fill-mode: forwards;
+      transform: translate(0, -20px);
+      background-color: #ffbfcb;
     }
   }
 }
