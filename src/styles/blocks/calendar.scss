@@ -1,0 +1,46 @@
+@for $i from 1 through 31 {
+  .calendar > div:nth-child(#{$i})::after {
+    content: "#{$i}";
+  }
+}
+
+@each $number in $number-of-days {
+  .calendar-#{$number} > div:nth-child(-n + #{$number}) {
+    display: flex;
+  }
+}
+
+@each $day, $size in $first-day-of-month {
+  .calendar-#{$day} > div:first-child {
+    margin-left: $size;
+  }
+}
+
+.calendar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  min-width: ($cell-size + $cell-margin) * 7;
+  max-width: ($cell-size + $cell-margin) * 7;
+
+  > div {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 $cell-size;
+    margin: $cell-margin $cell-margin 0 0;
+    height: $cell-size;
+    font-size: 30px;
+    background-color: #eee;
+    border: 1px solid #000;
+
+    &:hover {
+      position: relative;
+      cursor: pointer;
+      animation: hover;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
